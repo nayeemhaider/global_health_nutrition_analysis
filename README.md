@@ -2,14 +2,14 @@
 The work is an end-to-end analytics project using a global health and nutrition dataset to explore how diet, healthcare access and environment shape life expectancy and mortality. Includes advanced SQL-powered EDA, data quality checks, correlation mapping, and an interactive dashboard with narrative storytelling views.
 
 # Project Highlights
-✔ Automated schema builder that generates SQLite table definitions from the CSV (no manual typing of 150 columns)
-✔ Structured SQL modeling layer (v_core_clean, v_health_access, v_diet_profiles, v_gender_gap_life_expectancy, v_health_diet_join)
-✔ End-to-end ETL pipeline using Python + SQLite
-✔ Processed analytical datasets ready for machine learning or BI tools
-✔ Four detailed EDA notebooks
-✔ Interactive Streamlit dashboard with multi-dimensional insights
-✔ Story queries that drive narrative insights per country
-✔ Production-style repository structure
+    ✔ Automated schema builder that generates SQLite table definitions from the CSV (no manual typing of 150 columns)
+    ✔ Structured SQL modeling layer (v_core_clean, v_health_access, v_diet_profiles, v_gender_gap_life_expectancy, v_health_diet_join)
+    ✔ End-to-end ETL pipeline using Python + SQLite
+    ✔ Processed analytical datasets ready for machine learning or BI tools
+    ✔ Four detailed EDA notebooks
+    ✔ Interactive Streamlit dashboard with multi-dimensional insights
+    ✔ Story queries that drive narrative insights per country
+    ✔ Production-style repository structure
 
 # Project Architecture
             +---------------------------+
@@ -59,38 +59,38 @@ The work is an end-to-end analytics project using a global health and nutrition 
     +-----------------------+
 
 # Folder Structure
-            global_health_nutrition_analysis/
-            │
-            ├── data/
-            │   ├── raw/
-            │   │   └── global_health_nutrition.csv
-            │   ├── processed/
-            │   └── db/
-            │       └── global_health_nutrition.db
-            │
-            ├── sql/
-            │   ├── 01_create_table.sql
-            │   ├── 02_data_cleaning_views.sql
-            │   ├── 03_feature_aggregation.sql
-            │   └── 04_story_queries.sql
-            │
-            ├── scripts/
-            │   ├── generate_sql_schema.py
-            │   ├── load_to_db.py
-            │   └── export_analytic_tables.py
-            │
-            ├── notebooks/
-            │   ├── 01_eda_overview.ipynb
-            │   ├── 02_health_vs_access.ipynb
-            │   ├── 03_diet_vs_cardiovascular.ipynb
-            │   └── 04_gender_and_inequality.ipynb
-            │
-            ├── dashboard_app/
-            │   ├── app_streamlit.py
-            │   ├── queries.py
-            │   └── __init__.py
-            │
-            └── README.md
+    global_health_nutrition_analysis/
+    │
+    ├── data/
+    │   ├── raw/
+    │   │   └── global_health_nutrition.csv
+    │   ├── processed/
+    │   └── db/
+    │       └── global_health_nutrition.db
+    │
+    ├── sql/
+    │   ├── 01_create_table.sql
+    │   ├── 02_data_cleaning_views.sql
+    │   ├── 03_feature_aggregation.sql
+    │   └── 04_story_queries.sql
+    │
+    ├── scripts/
+    │   ├── generate_sql_schema.py
+    │   ├── load_to_db.py
+    │   └── export_analytic_tables.py
+    │
+    ├── notebooks/
+    │   ├── 01_eda_overview.ipynb
+    │   ├── 02_health_vs_access.ipynb
+    │   ├── 03_diet_vs_cardiovascular.ipynb
+    │   └── 04_gender_and_inequality.ipynb
+    │
+    ├── dashboard_app/
+    │   ├── app_streamlit.py
+    │   ├── queries.py
+    │   └── __init__.py
+    │
+    └── README.md
 
 # SQL Modeling Layer (Data Warehouse Views)
 1) v_core_clean
