@@ -210,19 +210,19 @@ Automatically generated insights
 
 ## 📊 Dashboard Overview
 
-![Dashboard Overview](./assets/images/dashboard_overview.png)
+![Dashboard Overview](./assets/images/dashboard_overview.JPG)
 
 ## 🩺 Health Access & Mortality
 
-![Health Access](./assets/images/health_care_access.png)
+![Health Access](./assets/images/health_care_access.JPG)
 
 ## 🍎 Diet Profiles & Cardiovascular Health
 
-![Diet Profile](./assets/images/diet_distribution.png)
+![Diet Profile](./assets/images/diet_distribution.JPG)
 
 ## 🚺 Gender Gap in Life Expectancy
 
-![Gender Gap](./assets/images/gender_gaps_life_expectancy.png)
+![Gender Gap](./assets/images/gender_gaps_life_expectancy.JPG)
 
 # How to Run the Project (Step-by-Step)
 1. Create environment
