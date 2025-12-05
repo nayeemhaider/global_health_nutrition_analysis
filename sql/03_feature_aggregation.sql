@@ -1,3 +1,5 @@
+-- Creates the analytical feature views (gender gap, diet profile, health-access, and the joined view).
+
 DROP VIEW IF EXISTS v_gender_gap_life_expectancy;
 
 CREATE VIEW v_gender_gap_life_expectancy AS
@@ -23,13 +25,13 @@ SELECT
     AVG(kcal_fat) AS fat_kcal,
     AVG(kcal_carb) AS carb_kcal,
     AVG(
-        COALESCE(fruit_bananas,0) +
-        COALESCE(fruit_oranges,0) +
-        COALESCE(fruit_apples,0) +
-        COALESCE(fruit_lemons_limes,0) +
-        COALESCE(fruit_grapes,0) +
-        COALESCE(fruit_grapefruit,0) +
-        COALESCE(fruit_pineapples,0)
+        COALESCE(fruit_bananas, 0) +
+        COALESCE(fruit_oranges, 0) +
+        COALESCE(fruit_apples, 0) +
+        COALESCE(fruit_lemons_limes, 0) +
+        COALESCE(fruit_grapes, 0) +
+        COALESCE(fruit_grapefruit, 0) +
+        COALESCE(fruit_pineapples, 0)
     ) AS total_fruit_consumption
 FROM v_core_clean
 GROUP BY country, year;
@@ -43,7 +45,6 @@ SELECT
     AVG(life_expectancy) AS life_expectancy,
     AVG(infant_mortality_rate) AS infant_mortality_rate,
     AVG(under5_mortality_rate) AS under5_mortality_rate,
-    AVG(neonatal_mortality_rate) AS neonatal_mortality_rate,
     AVG(uhc_coverage) AS uhc_coverage,
     AVG(doctors) AS doctors,
     AVG(nurses_midwifes) AS nurses_midwifes,

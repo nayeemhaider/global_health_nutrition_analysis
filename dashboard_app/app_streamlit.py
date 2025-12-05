@@ -14,7 +14,7 @@ from queries import (
 )
 
 st.set_page_config(
-    page_title="Global Health & Nutrition Atlas",
+    page_title="Global Health & Nutrition Analysis Dashboard",
     layout="wide"
 )
 

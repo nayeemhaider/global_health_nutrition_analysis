@@ -1,3 +1,4 @@
+-- These are reusable “story” queries for dashboard / notebooks.
 -- Top 10 countries by life expectancy in a given year
 SELECT country, life_expectancy
 FROM v_health_access

@@ -1,3 +1,5 @@
+-- Cleans and renames columns into a nice analytical base view.
+
 DROP VIEW IF EXISTS v_core_clean;
 
 CREATE VIEW v_core_clean AS
@@ -8,7 +10,6 @@ SELECT
     "Life Expectancy" AS life_expectancy,
     "Infant Mortality Rate" AS infant_mortality_rate,
     "Under 5 Mortality Rate" AS under5_mortality_rate,
-    "Neonatal Mortality Rate" AS neonatal_mortality_rate,
     "Suicides Rate" AS suicides_rate,
     "Road Traffic Deaths" AS road_traffic_deaths,
     "Death Rate" AS death_rate,
@@ -48,5 +49,5 @@ SELECT
     "% Death Cardiovascular" AS pct_death_cardiovascular,
     "Air Pollution Death Rate Total" AS air_pollution_death_total
 FROM global_health_nutrition
-WHERE year BETWEEN 1990 AND 2020
+WHERE Year BETWEEN 1990 AND 2020
   AND "Life Expectancy" IS NOT NULL;

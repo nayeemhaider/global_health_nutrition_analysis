@@ -1,75 +1,231 @@
 # global_health_nutrition_analysis
 The work is an end-to-end analytics project using a global health and nutrition dataset to explore how diet, healthcare access and environment shape life expectancy and mortality. Includes advanced SQL-powered EDA, data quality checks, correlation mapping, and an interactive dashboard with narrative storytelling views.
 
-# Global Health & Nutrition Atlas
+# Project Highlights
+✔ Automated schema builder that generates SQLite table definitions from the CSV (no manual typing of 150 columns)
+✔ Structured SQL modeling layer (v_core_clean, v_health_access, v_diet_profiles, v_gender_gap_life_expectancy, v_health_diet_join)
+✔ End-to-end ETL pipeline using Python + SQLite
+✔ Processed analytical datasets ready for machine learning or BI tools
+✔ Four detailed EDA notebooks
+✔ Interactive Streamlit dashboard with multi-dimensional insights
+✔ Story queries that drive narrative insights per country
+✔ Production-style repository structure
 
-An end-to-end data analysis project exploring how health systems, water and sanitation, and nutrition patterns relate to life expectancy and mortality across the world.
+# Project Architecture
+            +---------------------------+
+            |   Raw CSV (150 columns)   |
+            |  global_health_nutrition  |
+            +-------------+-------------+
+                          |
+                          v
+        +--------------------------------------+
+        |  generate_sql_schema.py               |
+        |  Auto-builds SQL CREATE TABLE schema  |
+        +-------------------+------------------+
+                          |
+                          v
+        +--------------------------------------+
+        |          load_to_db.py                |
+        | Loads CSV → SQLite table              |
+        | Applies SQL models (views)            |
+        +-------------------+------------------+
+                          |
+                          v
+       +---------------------------------------+
+       |  SQL Modeling Layer (Data Warehouse)   |
+       |----------------------------------------|
+       |  v_core_clean                          |
+       |  v_health_access                       |
+       |  v_diet_profiles                       |
+       |  v_gender_gap_life_expectancy          |
+       |  v_health_diet_join                    |
+       +-------------------+-------------------+
+                          |
+                          v
+        +--------------------------------------+
+        |      export_analytic_tables.py        |
+        |  Exports clean datasets to CSVs       |
+        +-------------------+------------------+
+                          |
+          +---------------+----------------+
+          |                                |
+          v                                v
++-----------------------+      +------------------------+
+|  EDA Notebooks        |      |  Streamlit Dashboard   |
+|  01_overview          |      |  Multi-page insights   |
+|  02_health_access     |      |  Country stories       |
+|  03_diet_cvd          |      |  Trend analyses        |
+|  04_gender_gap        |      +------------------------+
++-----------------------+
 
-The project uses a global health and nutrition dataset with 150 features and more than 20,000 country–year–gender records. It combines SQL, Python and an interactive Streamlit dashboard to tell a data story about health, access and inequality.
+# Folder Structure
+global_health_nutrition_analysis/
+│
+├── data/
+│   ├── raw/
+│   │   └── global_health_nutrition.csv
+│   ├── processed/
+│   └── db/
+│       └── global_health_nutrition.db
+│
+├── sql/
+│   ├── 01_create_table.sql
+│   ├── 02_data_cleaning_views.sql
+│   ├── 03_feature_aggregation.sql
+│   └── 04_story_queries.sql
+│
+├── scripts/
+│   ├── generate_sql_schema.py
+│   ├── load_to_db.py
+│   └── export_analytic_tables.py
+│
+├── notebooks/
+│   ├── 01_eda_overview.ipynb
+│   ├── 02_health_vs_access.ipynb
+│   ├── 03_diet_vs_cardiovascular.ipynb
+│   └── 04_gender_and_inequality.ipynb
+│
+├── dashboard_app/
+│   ├── app_streamlit.py
+│   ├── queries.py
+│   └── __init__.py
+│
+└── README.md
 
-## Objectives
+# SQL Modeling Layer (Data Warehouse Views)
+1) v_core_clean
 
-• Clean and model a wide multi-year health dataset using SQL and Python  
-• Explore relationships between life expectancy, child mortality and health infrastructure  
-• Analyse how diet and nutrition relate to cardiovascular deaths and overall health  
-• Study gender gaps and inequality in access to basic services  
-• Build an interactive dashboard for storytelling and country-level exploration  
+Renamed, cleaned, standardized analytical base
+Filters years 1990–2020
+Removes null life expectancy
+Extracts ~50 core indicators used for analysis
 
-## Dataset
+2) v_health_access
 
-The main dataset is stored in:
+Aggregates healthcare & sanitation indicators per country-year:
+Doctors, nurses
+Drinking water
+Basic & safe sanitation
+Clean fuel
+UHC coverage
+Mortality summaries
 
-`data/raw/global_health_nutrition.csv`
+3) v_diet_profiles
 
-Rows represent combinations of:
+Builds a nutrition profile:
+Animal protein kcal
+Plant protein kcal
+Fat & carb kcal
+Total fruit consumption (from 7 fruit variables)
 
-• Country  
-• Year  
-• Gender  
+4) v_gender_gap_life_expectancy
 
-Example feature groups:
+Pivot + feature engineering:
+female life expectancy
+male life expectancy
+female − male gap
 
-• Health outcomes:  
-  Life Expectancy, Infant Mortality Rate, Under 5 Mortality Rate, Neonatal Mortality Rate, Suicides Rate, Road Traffic Deaths, % Injury Deaths, Death Rate  
+5) v_health_diet_join
 
-• Environment and pollution:  
-  Air Pollution Death Rate (stroke, ischaemic heart disease, COPD, lower respiratory infections) with confidence intervals  
+A unified analytical model for dashboard visualization and EDA.
 
-• Infectious disease and interventions:  
-  Hepatitis B Surface Antigen, Intervention Against NTDs, Malaria, Tuberculosis  
+# EDA Notebooks (Exploratory Data Stories)
+### 01_eda_overview.ipynb
 
-• Health system access:  
-  Universal Heath Care Coverage, Births attended by skilled health personnel, Doctors, Nurses and Midwifes, Dentists, Pharmacists  
+Global trends in life expectancy
 
-• Water, sanitation and hygiene:  
-  Basic Drinking Water Services, Basic Sanization Services (total, urban, rural), Safely Sanitation (total, urban, rural), Basic Hand Washing (total, urban, rural), Clean Fuel and Technology  
+Mortality distributions
 
-• Demographics and SDG-style indicators:  
-  Population 10 Percentage SDG (total, urban, rural), Population 25 Percentage SDG (total, urban, rural), Reproductive Age Women, Adolescent Birth Rate, Birth Rate, Battle Related Deaths  
+Correlation maps
 
-• Nutrition and diet:  
-  Fruit Consumption (Bananas, Oranges, Apples, Lemons and Limes, Grapes, Grapefruit, Pineapples)  
-  Cereal Consumption (Oats, Rye, Barley, Sorghum, Maize, Wheat, Rice)  
-  Diet Calories Animal Protein, Diet Calories Plant Protein, Diet Calories Fat, Diet Calories Carbohydrates  
+Outlier diagnostics
 
-## Project structure
+Exporting cleaned subsets
 
-data/                 Raw CSV, cleaned CSVs, SQLite DB
-sql/                  Database schema, cleaning views, feature aggregations, story queries
-notebooks/            Jupyter notebooks for detailed EDA and analysis
-dashboard_app/        Streamlit application for interactive storytelling
-scripts/              Utility scripts (load CSV to DB, export analytic tables)
-reports/              Executive summary and country-level story outputs
-assets/images/        Screenshots for README and documentation
+### 02_health_vs_access.ipynb
 
+Doctors vs infant mortality
 
-# To run the dashboard
+Sanitation vs under-5 mortality
 
-## 1. Create and activate a virtual environment
+UHC coverage bins
+
+Country case studies
+
+### 03_diet_vs_cardiovascular.ipynb
+
+Animal protein vs cardiovascular mortality
+
+Carbohydrate/fat profiles
+
+Diet composition clusters
+
+Trend analysis for selected countries
+
+### 04_gender_and_inequality.ipynb
+
+Life expectancy gaps
+
+Dumbbell charts
+
+Gender gap vs access indicators
+
+Time series inequality analysis
+
+# Streamlit Dashboard
+streamlit run dashboard_app/app_streamlit.py
+
+# Dashboard Features
+🟦 1. Global Overview
+
+Trends in LE, mortality
+Global indicators
+Top-10 comparisons
+
+🟩 2. Access & Mortality
+
+Doctors vs mortality
+Water/sanitation inequalities
+Country heatmaps
+
+🟧 3. Diet & Cardiovascular Health
+
+Scatterplots
+Fruit consumption impact
+Dietary clusters
+
+🟥 4. Gender & Inequality
+
+Visual gap analytics
+Cross-country comparisons
+
+🟪 5. Country Storytelling Module
+
+Dynamic narrative includes:
+Life expectancy improvement
+Mortality evolution
+Diet patterns
+Access changes
+Automatically generated insights
+
+# How to Run the Project (Step-by-Step)
+1. Create environment
+python -m venv .venv
+.\.venv\Scripts\activate
 pip install -r requirements.txt
 
-## 2. Load the CSV into a local SQLite database
+2. Generate SQL schema automatically
+python scripts/generate_sql_schema.py
+
+3. Build the database
 python scripts/load_to_db.py
 
-## 3. Launch the dashboard
+4. Export analytical datasets (optional)
+python scripts/export_analytic_tables.py
+
+5. Run the notebooks
+jupyter notebook
+
+6. Launch dashboard
 streamlit run dashboard_app/app_streamlit.py
+
