@@ -50,47 +50,47 @@ The work is an end-to-end analytics project using a global health and nutrition 
           +---------------+----------------+
           |                                |
           v                                v
-+-----------------------+      +------------------------+
-|  EDA Notebooks        |      |  Streamlit Dashboard   |
-|  01_overview          |      |  Multi-page insights   |
-|  02_health_access     |      |  Country stories       |
-|  03_diet_cvd          |      |  Trend analyses        |
-|  04_gender_gap        |      +------------------------+
-+-----------------------+
+    +-----------------------+      +------------------------+
+    |  EDA Notebooks        |      |  Streamlit Dashboard   |
+    |  01_overview          |      |  Multi-page insights   |
+    |  02_health_access     |      |  Country stories       |
+    |  03_diet_cvd          |      |  Trend analyses        |
+    |  04_gender_gap        |      +------------------------+
+    +-----------------------+
 
 # Folder Structure
-global_health_nutrition_analysis/
-│
-├── data/
-│   ├── raw/
-│   │   └── global_health_nutrition.csv
-│   ├── processed/
-│   └── db/
-│       └── global_health_nutrition.db
-│
-├── sql/
-│   ├── 01_create_table.sql
-│   ├── 02_data_cleaning_views.sql
-│   ├── 03_feature_aggregation.sql
-│   └── 04_story_queries.sql
-│
-├── scripts/
-│   ├── generate_sql_schema.py
-│   ├── load_to_db.py
-│   └── export_analytic_tables.py
-│
-├── notebooks/
-│   ├── 01_eda_overview.ipynb
-│   ├── 02_health_vs_access.ipynb
-│   ├── 03_diet_vs_cardiovascular.ipynb
-│   └── 04_gender_and_inequality.ipynb
-│
-├── dashboard_app/
-│   ├── app_streamlit.py
-│   ├── queries.py
-│   └── __init__.py
-│
-└── README.md
+            global_health_nutrition_analysis/
+            │
+            ├── data/
+            │   ├── raw/
+            │   │   └── global_health_nutrition.csv
+            │   ├── processed/
+            │   └── db/
+            │       └── global_health_nutrition.db
+            │
+            ├── sql/
+            │   ├── 01_create_table.sql
+            │   ├── 02_data_cleaning_views.sql
+            │   ├── 03_feature_aggregation.sql
+            │   └── 04_story_queries.sql
+            │
+            ├── scripts/
+            │   ├── generate_sql_schema.py
+            │   ├── load_to_db.py
+            │   └── export_analytic_tables.py
+            │
+            ├── notebooks/
+            │   ├── 01_eda_overview.ipynb
+            │   ├── 02_health_vs_access.ipynb
+            │   ├── 03_diet_vs_cardiovascular.ipynb
+            │   └── 04_gender_and_inequality.ipynb
+            │
+            ├── dashboard_app/
+            │   ├── app_streamlit.py
+            │   ├── queries.py
+            │   └── __init__.py
+            │
+            └── README.md
 
 # SQL Modeling Layer (Data Warehouse Views)
 1) v_core_clean
