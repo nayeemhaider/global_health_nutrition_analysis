@@ -219,13 +219,20 @@ Automatically generated insights
 ## 🍎 Diet Profiles & Cardiovascular Health
 
 ![Diet Profile](./assets/images/diet_distribution.JPG)
-![Diet Distribution of Germany](reports/countries/plots/Germany_diet.png)
 
 ## 🚺 Gender Gap in Life Expectancy
 
 ![Gender Gap](./assets/images/gender_gaps_life_expectancy.JPG)
 
-![Life Expectancy in Germany](reports/countries/plots/Germany_life_expectancy.png)
+## Country Report (Germany)
+
+![Life Expectancy](plots/Germany_life_expectancy.png)
+
+![Under-5 Mortality](plots/Germany_under5_mortality.png)
+
+![Doctors per 1,000](plots/Germany_doctors.png)
+
+![Diet Composition](plots/Germany_diet.png)
 
 # How to Run the Project (Step-by-Step)
 1. Create environment
