@@ -219,10 +219,13 @@ Automatically generated insights
 ## 🍎 Diet Profiles & Cardiovascular Health
 
 ![Diet Profile](./assets/images/diet_distribution.JPG)
+![Diet Distribution of Germany](reports/countries/plots/Germany_diet.png)
 
 ## 🚺 Gender Gap in Life Expectancy
 
 ![Gender Gap](./assets/images/gender_gaps_life_expectancy.JPG)
+
+![Life Expectancy in Germany](reports/countries/plots/Germany_life_expectancy.png)
 
 # How to Run the Project (Step-by-Step)
 1. Create environment
@@ -244,4 +247,7 @@ jupyter notebook
 
 6. Launch dashboard
 streamlit run dashboard_app/app_streamlit.py
+
+7. Generate Report Country-wise
+python scripts/generate_country_reports.py
 
