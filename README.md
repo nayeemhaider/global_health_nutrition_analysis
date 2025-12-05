@@ -226,13 +226,13 @@ Automatically generated insights
 
 ## Country Report (Germany)
 
-![Life Expectancy](plots/Germany_life_expectancy.png)
+![Life Expectancy](./reports/countries/plots/Germany_life_expectancy.png)
 
-![Under-5 Mortality](plots/Germany_under5_mortality.png)
+![Under-5 Mortality](./reports/countriesplots/Germany_under5_mortality.png)
 
-![Doctors per 1,000](plots/Germany_doctors.png)
+![Doctors per 1,000](./reports/countriesplots/Germany_doctors.png)
 
-![Diet Composition](plots/Germany_diet.png)
+![Diet Composition](./reports/countriesplots/Germany_diet.png)
 
 # How to Run the Project (Step-by-Step)
 1. Create environment
