@@ -228,7 +228,7 @@ Automatically generated insights
 
 ![Life Expectancy](./reports/countries/plots/Germany_life_expectancy.png)
 
-![Under-5 Mortality](./reports/countrie/splots/Germany_under5_mortality.png)
+![Under-5 Mortality](./reports/countries/plots/Germany_under5_mortality.png)
 
 ![Doctors per 1,000](./reports/countries/plots/Germany_doctors.png)
 
