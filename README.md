@@ -208,6 +208,22 @@ Diet patterns
 Access changes
 Automatically generated insights
 
+## 📊 Dashboard Overview
+
+![Dashboard Overview](assets/images/dashboard_overview.png)
+
+## 🩺 Health Access & Mortality
+
+![Health Access](assets/images/health_care_access.png)
+
+## 🍎 Diet Profiles & Cardiovascular Health
+
+![Diet Profile](assets/images/diet_distribution.png)
+
+## 🚺 Gender Gap in Life Expectancy
+
+![Gender Gap](assets/images/gender_gaps_life_expectancy.png)
+
 # How to Run the Project (Step-by-Step)
 1. Create environment
 python -m venv .venv

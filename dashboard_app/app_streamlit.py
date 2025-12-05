@@ -18,7 +18,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("Global Health & Nutrition Atlas")
+st.title("Global Health & Nutrition Analysis Dashboard")
 
 # Sidebar controls
 years = get_year_range()
