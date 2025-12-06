@@ -2,14 +2,14 @@
 The work is an end-to-end analytics project using a global health and nutrition dataset to explore how diet, healthcare access and environment shape life expectancy and mortality. Includes advanced SQL-powered EDA, data quality checks, correlation mapping, and an interactive dashboard with narrative storytelling views.
 
 # Project Highlights
-    ✔ Automated schema builder that generates SQLite table definitions from the CSV (no manual typing of 150 columns)
-    ✔ Structured SQL modeling layer (v_core_clean, v_health_access, v_diet_profiles, v_gender_gap_life_expectancy, v_health_diet_join)
-    ✔ End-to-end ETL pipeline using Python + SQLite
-    ✔ Processed analytical datasets ready for machine learning or BI tools
-    ✔ Four detailed EDA notebooks
-    ✔ Interactive Streamlit dashboard with multi-dimensional insights
-    ✔ Story queries that drive narrative insights per country
-    ✔ Production-style repository structure
+1. Automated schema builder that generates SQLite table definitions from the CSV (no manual typing of 150 columns)
+2. Structured SQL modeling layer (v_core_clean, v_health_access, v_diet_profiles, v_gender_gap_life_expectancy, v_health_diet_join)
+3. End-to-end ETL pipeline using Python + SQLite
+4. Processed analytical datasets ready for machine learning or BI tools
+5. Four detailed EDA notebooks
+6. Interactive Streamlit dashboard with multi-dimensional insights
+7. Story queries that drive narrative insights per country
+8. Production-style repository structure
 
 # Project Architecture
             +---------------------------+
@@ -93,14 +93,14 @@ The work is an end-to-end analytics project using a global health and nutrition 
     └── README.md
 
 # SQL Modeling Layer (Data Warehouse Views)
-1) v_core_clean
+1. v_core_clean
 
 Renamed, cleaned, standardized analytical base
 Filters years 1990–2020
 Removes null life expectancy
 Extracts ~50 core indicators used for analysis
 
-2) v_health_access
+2. v_health_access
 
 Aggregates healthcare & sanitation indicators per country-year:
 Doctors, nurses
@@ -110,7 +110,7 @@ Clean fuel
 UHC coverage
 Mortality summaries
 
-3) v_diet_profiles
+3. v_diet_profiles
 
 Builds a nutrition profile:
 Animal protein kcal
@@ -118,14 +118,14 @@ Plant protein kcal
 Fat & carb kcal
 Total fruit consumption (from 7 fruit variables)
 
-4) v_gender_gap_life_expectancy
+4. v_gender_gap_life_expectancy
 
 Pivot + feature engineering:
 female life expectancy
 male life expectancy
 female − male gap
 
-5) v_health_diet_join
+5. v_health_diet_join
 
 A unified analytical model for dashboard visualization and EDA.
 
@@ -176,30 +176,30 @@ Time series inequality analysis
 streamlit run dashboard_app/app_streamlit.py
 
 # Dashboard Features
-🟦 1. Global Overview
+1. Global Overview
 
 Trends in LE, mortality
 Global indicators
 Top-10 comparisons
 
-🟩 2. Access & Mortality
+2. Access & Mortality
 
 Doctors vs mortality
 Water/sanitation inequalities
 Country heatmaps
 
-🟧 3. Diet & Cardiovascular Health
+3. Diet & Cardiovascular Health
 
 Scatterplots
 Fruit consumption impact
 Dietary clusters
 
-🟥 4. Gender & Inequality
+4. Gender & Inequality
 
 Visual gap analytics
 Cross-country comparisons
 
-🟪 5. Country Storytelling Module
+5. Country Storytelling Module
 
 Dynamic narrative includes:
 Life expectancy improvement
@@ -208,19 +208,19 @@ Diet patterns
 Access changes
 Automatically generated insights
 
-## 📊 Dashboard Overview
+## Dashboard Overview
 
 ![Dashboard Overview](./assets/images/dashboard_overview.JPG)
 
-## 🩺 Health Access & Mortality
+## Health Access & Mortality
 
 ![Health Access](./assets/images/health_care_access.JPG)
 
-## 🍎 Diet Profiles & Cardiovascular Health
+## Diet Profiles & Cardiovascular Health
 
 ![Diet Profile](./assets/images/diet_distribution.JPG)
 
-## 🚺 Gender Gap in Life Expectancy
+## Gender Gap in Life Expectancy
 
 ![Gender Gap](./assets/images/gender_gaps_life_expectancy.JPG)
 
